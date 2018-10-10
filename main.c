@@ -7,6 +7,7 @@ int main(){
   struct node a;
   struct node b;
   struct node c;
+  //a = malloc(3 * sizeof(int));
   a.i = 1;
   b.i = 2;
   c.i = 3;
