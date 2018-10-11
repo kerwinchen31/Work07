@@ -4,16 +4,19 @@
 
 
 int main(){
-  struct node a;
-  struct node b;
-  struct node c;
-  //a = malloc(3 * sizeof(int));
-  a.i = 1;
-  b.i = 2;
-  c.i = 3;
-  a.next = &b;
-  b.next = &c;
-  c.next = 0;
-  print_list(&a);
+  struct node *a;
+  a = insert_front(NULL, 4);
+  printf("node a: ");
+  print_list(a);
+  a = insert_front(a, 7);
+  printf("added 7 to front, node a: ");
+  print_list(a);
+  a = insert_front(a, 2);
+  printf("added 2 to front, node a: ");
+  print_list(a);
+  printf("freeing nodes\n");
+  free_list(a);
+  printf("node a, freed (0 and then junk values): ");
+  print_list(a);
   return 0;
 }
